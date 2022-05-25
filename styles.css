@@ -1,0 +1,40 @@
+@import "reset.css";
+
+body {
+  color: #2e363e;
+  font-family: "Open Sans", sans-serif;
+  height: 100vh;
+  width: 100vw;
+}
+
+.date-now,
+.calculator,
+.image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30vh;
+}
+
+#nowdate {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+input {
+  text-align: center;
+  width: 70px;
+  height: 30px;
+  font-size: 20px;
+}
+
+.calculator {
+  display: flex;
+  flex-direction: column;
+}
+
+#age,
+#year {
+  font-size: 40px;
+  color: blue;
+}
