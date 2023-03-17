@@ -13,14 +13,12 @@
     </div>
     <div class="calculator">
       <div class="age-to-year">
-        <input type="numer" id="input_age" maxlength="2" inputmode="numeric" />
-        세는
+        <input type="numer" id="input_age" maxlength="2" /> 세는
         <span id="year"></span>
         년생 입니다.
       </div>
       <div class="year-to-age">
-        <input type="numer" id="input_year" maxlength="4" inputmode="numeric" />
-        년생은
+        <input type="numer" id="input_year" maxlength="8" /> 은 만
         <span id="age"></span>
         세 입니다.
       </div>
@@ -38,11 +36,17 @@
         today.getDate() +
         "일";
       var now_year = today.getFullYear();
+      var now_month = today.getMonth();
+      var now_date = today.getDate();
       input_age.oninput = function () {
         year.innerHTML = now_year - input_age.value + 1;
       };
       input_year.oninput = function () {
-        age.innerHTML = now_year - input_year.value + 1;
+        //
+        var check8 = now_year * 10000 + (now_month + 1) * 100 + now_date;
+        var check_age = check8 - input_year.value;
+        var check_year = Math.floor(check_age / 10000);
+        age.innerHTML = check_year;
       };
     </script>
   </body>
